@@ -1,0 +1,1 @@
+utils::globalVariables(c("Nh", "NhN", "aipmi2", "fpc", "lower", "m2", "me", "midpoint", "midpointnh", "midpointstr", "midstr", "nminus1", "nnminus1m2", "oneminusf", "p", "pNh", "pwt", "received", "se", "second", "sumsvar", "svar", "third", "upper", "value", "variable", "variance", "varstr", "x2", "%>%"))
