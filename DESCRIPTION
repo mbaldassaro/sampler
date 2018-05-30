@@ -1,0 +1,14 @@
+Package: sampler
+Type: Package
+Title: Sample Design, Drawing & Data Analysis Using Data Frames
+Version: 0.1.0
+Author: Michael Baldassaro
+Maintainer: Michael Baldassaro <mbaldassaro@gmail.com>
+Description: This package enables you to determine sample sizes, draw samples, and conduct data analysis using data frames. It specifically enables you to determine simple random sample sizes, stratified sample sizes, and complex stratified sample sizes using a secondary variable such as population; draw simple random samples and stratified random samples from sampling data frames; determine which observations are missing from a random sample, missing by strata, duplicated within a dataset; and perform data analysis, including proportions, margins of error and upper and lower bounds for simple, stratified and cluster sample designs. 
+License: MIT + file LICENSE
+URL: https://github.com/mbaldassaro/sampler
+BugReports: https://github.com/mbaldassaro/sampler/issues
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr, tidyr, splitstackshape, reshape
+RoxygenNote: 6.0.1
