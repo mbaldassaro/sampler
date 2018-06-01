@@ -13,7 +13,7 @@ The sampler R package builds a bridge for survey administrators between the free
 
 ### To install in R from GitHub:
 
-```
+```r
 install.packages("devtools”); library(devtools)
 devtools::install_github("mbaldassaro/sampler”); library(sampler)
 ```
@@ -27,7 +27,7 @@ The package provides the following functionality:
 
 ### Determine random sample size
 
-```
+```r
 rsampcalc(N, e, ci=95,p=0.5, over=0)
 ```
 
@@ -41,7 +41,7 @@ Where:
 Returns appropriate sample size (rounded up to nearest integer)
 
 Example:
-```
+```r
 rsampcalc(N=5361, e=3, ci=95, p=0.5, over=0.1)
 ```
 
@@ -49,7 +49,7 @@ rsampcalc(N=5361, e=3, ci=95, p=0.5, over=0.1)
 
 ### Draw a simple random sample 
 
-```
+```r
 rsamp(df, n, over=0, rep=FALSE)
 ```
 
@@ -62,18 +62,18 @@ Where:
 Returns a simple random sample of size ```n```
 
 Example:
-```
+```r
 rsamp(albania, n=360, over=0.1, rep=FALSE)
 ```
 or
-```
+```r
 size <- rsampcalc(nrow(albania), 3, 95, 0.5)
 rsamp(albania, size)
 ```
 
 ### Determine sample size by strata using proportional allocation
 
-```
+```r
 ssampcalc(df, n, strata, over=0)
 ```
 
@@ -86,11 +86,11 @@ Where:
 Returns proportional sample size per strata (rounded up to nearest integer)
 
 Example:
-```
+```r
 ssampcalc(df=albania, n=544, strata=qarku, over=0.05)
 ```
 or
-```
+```r
 size <- rsampcalc(nrow(albania), 3, 95, 0.5)
 ssampcalc(albania, size, qarku)
 ```
@@ -99,7 +99,7 @@ ssampcalc(albania, size, qarku)
 
 ### Draw stratified sample (proportional allocation)
 
-```
+```r
 ssamp(df, n, strata, over=1)
 ```
 
@@ -112,18 +112,18 @@ Where:
 Returns stratified sample using proportional allocation without replacement
 
 Example:
-```
+```r
 ssamp(df=albania, n=360, strata=qarku, over=0.1)
 ```
 or
-```
+```r
 size <- rsampcalc(nrow(albania), 3, 95, 0.5)
 ssamp(albania, size, qarku)
 ```
 
 ### Determine sample size by strata using sub-units
 
-```
+```r
 psampcalc(df, n, strata, unit, over=0)
 ```
 
@@ -137,7 +137,7 @@ Where:
 Returns sample size per strata based on sub-units (rounded up to nearest integer)
 
 Example
-```
+```r
 psampcalc(df=albania, n=544, strata=qarku, unit=zgjedhes, over=0.1)
 ```
 
@@ -145,7 +145,7 @@ psampcalc(df=albania, n=544, strata=qarku, unit=zgjedhes, over=0.1)
 
 ### Calculate proportion and margin of error (simple random sample)
 
-```
+```r
 rpro(df, col_name, ci=95, na="", N=0)
 ```
 Where: 
@@ -158,7 +158,7 @@ Where:
 Returns table of responses (n), proportions (midpoint), margins of error, lower and upper bounds by factor for a given variable
 
 Example:
-```
+```r
 rpro(df=opening, col_name=openTime, ci=95, na="n/a", N=5361)
 ```
 
@@ -166,7 +166,7 @@ rpro(df=opening, col_name=openTime, ci=95, na="n/a", N=5361)
 
 ### Calculate proportion and margin of error (stratified sample)
 
-```
+```r
 spro(fulldf, sampdf, strata, col_name, ci=95, na="")
 ```
 
@@ -181,7 +181,7 @@ Where:
 Returns table of responses (n), proportions (midpoint), margins of error, lower and upper bounds by factor for a given variable in a stratified sample
 
 Example:
-```
+```r
 spro(fulldf=albania, sampdf=opening, strata=qarku, col_name=openTime, ci=95, na="n/a")
 ```
 
@@ -189,7 +189,7 @@ spro(fulldf=albania, sampdf=opening, strata=qarku, col_name=openTime, ci=95, na=
 
 ### Calculate proportion and margin of error (unequal-sized cluster sample)
 
-```
+```r
 cpro(df, numerator, denominator, ci=95, na="", N=0)
 ```
 
@@ -204,7 +204,7 @@ Where:
 Returns table of responses (n), proportions (midpoint), margins of error, lower and upper bounds by factor for a given variable in an unequal-sized cluster sample
 
 Example:
-```
+```r
 alresults <- ssamp(albania, 890, qarku)
 cpro(df=alresults, numerator=totalVoters, denominator=zgjedhes, ci=95)
 cpro(df=alresults, numerator=pd, denominator=validVotes, ci=95, N=5361)
@@ -216,7 +216,7 @@ cpro(df=alresults, numerator=pd, denominator=validVotes, ci=95, N=5361)
 
 ### Identify missing points between sample and collected data
 
-```
+```r
 rmissing(sampdf, colldf, col_name)
 ```
 
@@ -228,7 +228,7 @@ Where:
 Returns table of sample points missing from collected data
 
 Example:
-```
+```r
 alsample <- rsamp(df=albania, 544)
 alreceived <- rsamp(df=alsample, 390)
 rmissing(sampdf=alsample, colldf=alreceived, col_name=qvKod)
@@ -236,7 +236,7 @@ rmissing(sampdf=alsample, colldf=alreceived, col_name=qvKod)
 
 ### Identify number of missing points by strata between sample and collected data
 
-```
+```r
 smissing(sampdf, colldf, strata, col_name)
 ```
 
@@ -249,7 +249,7 @@ Where:
 Returns table of number of sample points by strata missing from collected data
 
 Example:
-```
+```r
 alsample <- rsamp(df=albania, 544)
 alreceived <- rsamp(df=alsample, 390)
 smissing(sampdf=alsample, colldf=alreceived, strata=qarku, col_name=qvKod)
@@ -257,7 +257,7 @@ smissing(sampdf=alsample, colldf=alreceived, strata=qarku, col_name=qvKod)
 
 ### Identify duplicate values within collected data
 
-```
+```r
 dupe(df, col_name)
 ```
 
@@ -268,14 +268,14 @@ Where:
 Returns table of duplicate values within collected data
 
 Example:
-```
+```r
 aldupe <- rsamp(df=albania, n=390, rep=TRUE)
 dupe(df=aldupe, col_name=qvKod)
 ```
 
 ### Remove observations based on duplicate values within collected data
 
-```
+```r
 dedupe(df, col_name)
 ```
 
@@ -287,7 +287,7 @@ Returns table of observations based on unique values within collected data
 
 Example:
 
-```
+```r
 aldupe <- rsamp(df=albania, n=390, rep=TRUE)
 dedupe(df=aldupe, col_name=qvKod)
 ```
