@@ -9,12 +9,19 @@ Specifically, a data scientist can use the sampler R package to:
 * determine which observations are missing from a random sample, missing by strata, duplicated within a dataset 
 * perform data analysis, including proportions, margins of error and upper and lower bounds for simple, stratified and cluster sample designs 
 
-The sampler R package builds a bridge for survey administrators between the free and open-source R environment and no-to-low cost [Open Data Kit (ODK)](https://opendatakit.org/)-based toolkits such as [Ona](https://ona.io/home/) and [ELMO](http://getelmo.org/). The sampler package has been submitted to [CRAN](https://cran.r-project.org/) and is pending approval, but is now available via GitHub for use in [R](https://www.r-project.org/) and [R Studio](https://www.rstudio.com/).  
+The sampler R package builds a bridge for survey administrators between the free and open-source R environment and no-to-low cost [Open Data Kit (ODK)](https://opendatakit.org/)-based toolkits such as [Ona](https://ona.io/home/) and [ELMO](http://getelmo.org/). The sampler package is available via [CRAN](https://CRAN.R-project.org/package=sampler) or GitHub for use in [R](https://www.r-project.org/) and [R Studio](https://www.rstudio.com/).  
+
+### To install in R from CRAN:
+
+```r
+install.packages("sampler")
+library(sampler)
+```
 
 ### To install in R from GitHub:
 
 ```r
-install.packages("devtools”); library(devtools)
+install.packages("devtools"); library(devtools)
 devtools::install_github("mbaldassaro/sampler”); library(sampler)
 ```
 
@@ -22,6 +29,8 @@ The sampler R package comes with the following in-memory datasets:
 
 * ```albania```: dataset containing 2017 Albania election results by polling station published by the Central Election Commission and opened by the Coalition of Domestic Observers & Democracy International
 * ```opening```: dataset containing 2017 Albania election observation findings on polling station opening process by the Coalition of Domestic Observers (CDO) CDO conducted a statistically-based observation (SBO) exercise, deploying observers to a random sample of polling stations for the 25 June 2017 Albanian elections. This is a subset of observation data collected by CDO observers that includes data that was used to perform statistical analysis
+
+See [reference manual](https://cran.r-project.org/web/packages/sampler/sampler.pdf) for full documentation of datasets and functions. 
 
 The package provides the following functionality: 
 
