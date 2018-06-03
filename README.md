@@ -1,4 +1,6 @@
 # sampler R package
+![R](https://r-pkg.org/badges/version/sampler)  [![Rdoc](http://www.rdocumentation.org/badges/version/sampler)](http://www.rdocumentation.org/packages/sampler)
+
 ### R Package for Sample Design, Drawing, & Data Analysis Using Data Frames
 The sampler R package is designed to enable data scientists to design, draw, and analyze simple or complex samples using data frames. It enables you to load machine-readable files (e.g. .csv, .tsv, etc.) in R containing a sampling frame or collected data, store them as objects, and perform sampling techniques and analysis using clear and concise methods. 
 
@@ -25,14 +27,12 @@ install.packages("devtools"); library(devtools)
 devtools::install_github("mbaldassaro/sampler”); library(sampler)
 ```
 
-The sampler R package comes with the following in-memory datasets:
+The sampler R package includes the following datasets:
 
 * ```albania```: dataset containing 2017 Albania election results by polling station published by the Central Election Commission and opened by the Coalition of Domestic Observers & Democracy International
 * ```opening```: dataset containing 2017 Albania election observation findings on polling station opening process by the Coalition of Domestic Observers (CDO) CDO conducted a statistically-based observation (SBO) exercise, deploying observers to a random sample of polling stations for the 25 June 2017 Albanian elections. This is a subset of observation data collected by CDO observers that includes data that was used to perform statistical analysis
 
-See [reference manual](https://cran.r-project.org/web/packages/sampler/sampler.pdf) for full documentation of datasets and functions. 
-
-The package provides the following functionality: 
+Full documentation of datasets and functions can be found on [RDocumentation](https://www.rdocumentation.org/packages/sampler) 
 
 ### Determine random sample size
 
