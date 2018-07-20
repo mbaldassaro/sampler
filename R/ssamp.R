@@ -19,6 +19,7 @@ ssamp <- function(df, n, strata, over=1) {
   if(over !=1) { n <- ceiling(n + n*over) }
   strata <- enquo(strata)
   samptable <- ssampcalc(df, n, !!strata)
+  samptable$nh <- as.integer(samptable$nh)
   df %>% group_by(!!strata) %>% nest() %>% arrange(!!strata) %>% mutate(nh=samptable$nh) %>% mutate(samp=map2(data, nh, sample_n)) %>% select(!!strata, samp) %>% unnest()
 }
 
