@@ -27,6 +27,3 @@ ssamp(df=albania, n=360, strata=qarku, over=0.1)
 size <- rsampcalc(nrow(albania), 3, 95, 0.5)
 stratifiedsample <- ssamp(albania, size, qarku)
 }
-\references{
-Simplified wrapper around splitstackshape::stratified()
-}

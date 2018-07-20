@@ -10,17 +10,16 @@
 #' @examples
 #' size <- rsampcalc(nrow(albania), 3, 95, 0.5)
 #' stratifiedsample <- ssamp(albania, size, qarku)
-#' @references
-#' Simplified wrapper around splitstackshape::stratified()
 #' @import
 #' dplyr
-#' splitstackshape
+#' purrr
+#' tidyr
 #' @export
 ssamp <- function(df, n, strata, over=1) {
   if(over !=1) { n <- ceiling(n + n*over) }
-  numer <- n
-  denom <- nrow(df)
-  strata <- quo_name(enquo(strata))
-  stratified(df, strata, numer / denom)
+  strata <- enquo(strata)
+  samptable <- ssampcalc(df, n, !!strata)
+  df %>% group_by(!!strata) %>% nest() %>% arrange(!!strata) %>% mutate(nh=samptable$nh) %>% mutate(samp=map2(data, nh, sample_n)) %>% select(!!strata, samp) %>% unnest()
 }
+
 
