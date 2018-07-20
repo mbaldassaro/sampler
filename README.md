@@ -1,6 +1,7 @@
 # sampler R package
 ![R](https://r-pkg.org/badges/version/sampler)  [![Rdoc](http://www.rdocumentation.org/badges/version/sampler)](http://www.rdocumentation.org/packages/sampler)
 
+
 ### R Package for Sample Design, Drawing, & Data Analysis Using Data Frames
 The sampler R package is designed to enable data scientists to design, draw, and analyze simple or complex samples using data frames. It enables you to load machine-readable files (e.g. .csv, .tsv, etc.) in R containing a sampling frame or collected data, store them as objects, and perform sampling techniques and analysis using clear and concise methods. 
 
@@ -24,7 +25,7 @@ library(sampler)
 
 ```r
 install.packages("devtools"); library(devtools)
-devtools::install_github("mbaldassaro/sampler”); library(sampler)
+devtools::install_github("mbaldassaro/sampler"); library(sampler)
 ```
 
 The sampler R package includes the following datasets:
