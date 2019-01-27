@@ -18,5 +18,5 @@
 ssampcalc <- function(df, n, strata, over=0) {
   if(over !=0) { n <- ceiling(n + n*over) }
   strata <- enquo(strata)
-  df %>% group_by(!!strata) %>% summarise(Nh=length(!!strata), wt=(length(!!strata) / count(df)), nh=round(n*((length(!!strata))/count(df))))
+  df %>% group_by(!!strata) %>% summarise(Nh=length(!!strata), wt=t(length(!!strata) / count(df)), nh=t(round(n*((length(!!strata))/count(df)))))
   }
