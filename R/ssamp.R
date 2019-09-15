@@ -20,7 +20,7 @@ ssamp <- function(df, n, strata, over=1) {
   strata <- enquo(strata)
   samptable <- ssampcalc(df, n, !!strata)
   samptable$nh <- as.integer(samptable$nh)
-  df %>% group_by(!!strata) %>% nest() %>% arrange(!!strata) %>% mutate(nh=samptable$nh) %>% mutate(samp=map2(data, nh, sample_n)) %>% select(!!strata, samp) %>% unnest()
+  df %>% group_by(!!strata) %>% nest_legacy() %>% arrange(!!strata) %>% mutate(nh=samptable$nh) %>% mutate(samp=map2(data, nh, sample_n)) %>% select(!!strata, samp) %>% unnest_legacy()
 }
 
 
