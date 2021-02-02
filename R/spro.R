@@ -42,5 +42,5 @@ spro <- function(fulldf, sampdf, strata, col_name, ci=95, na="") {
   b10 <- b9 %>% group_by(variable) %>% summarise(midstr=sum(midpointstr), sumsvar=sum(svar))
   b11 <- b10 %>% transmute(variable=variable, midpoint=midstr*100, me=z*(sqrt(sumsvar)*100),lower=midpoint-me,upper=midpoint+me)
   b12 <- cbind(bn,b11[,-1])
-  print(b12)
+  return(b12)
 }
