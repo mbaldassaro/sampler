@@ -12,7 +12,7 @@ Specifically, a data scientist can use the sampler R package to:
 * determine which observations are missing from a random sample, missing by strata, duplicated within a dataset 
 * perform data analysis, including proportions, margins of error and upper and lower bounds for simple, stratified and cluster sample designs 
 
-The sampler R package builds a bridge for survey administrators between the free and open-source R environment and no-to-low cost [Open Data Kit (ODK)](https://opendatakit.org/)-based toolkits such as [Ona](https://ona.io/home/) and [ELMO](http://getelmo.org/). The sampler package is available via [CRAN](https://CRAN.R-project.org/package=sampler) or GitHub for use in [R](https://www.r-project.org/) and [R Studio](https://www.rstudio.com/).  
+The sampler R package builds a bridge for survey administrators between the free and open-source R environment and no-to-low cost [Open Data Kit (ODK)](https://opendatakit.org/)-based toolkits such as [Ona](https://ona.io/home/) and [NEMO](http://getnemo.org/). The sampler package is available via [CRAN](https://CRAN.R-project.org/package=sampler) or GitHub for use in [R](https://www.r-project.org/) and [R Studio](https://www.rstudio.com/).  
 
 ### To install in R from CRAN:
 
